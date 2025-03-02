@@ -13,7 +13,7 @@ spec:
         app: boardgame
     spec:
       containers:
-      - image: myrepo/myapp:52d35c5f9721ba013a0aa6837da3a30931f5c7a0
+      - image: myrepo/myapp:0e7028c4248e1f198520d33875373ca16d78ed71
         imagePullPolicy: Always
         name: boardgame
         ports:
