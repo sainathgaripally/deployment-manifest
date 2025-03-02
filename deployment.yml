@@ -1,15 +1,20 @@
-import yaml
-import os
-
-yaml_file_path = "dep.yml"
-
-with open(yaml_file_path, "r") as file:
-    data = yaml.safe_load(file)
-    
-containers = data['spec']['template']['spec']['containers']
-
-
-containers[0]["image"] = "abc"
-
-with open(yaml_file_path, "w") as f:
-    yaml.dump(data, f, default_flow_style=False)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boardgame-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: boardgame
+  template:
+    metadata:
+      labels:
+        app: boardgame
+    spec:
+      containers:
+      - image: abc
+        imagePullPolicy: Always
+        name: boardgame
+        ports:
+        - containerPort: 8080
