@@ -13,7 +13,7 @@ spec:
         app: boardgame
     spec:
       containers:
-      - image: myrepo/myapp:0e7028c4248e1f198520d33875373ca16d78ed71
+      - image: nginx
         imagePullPolicy: Always
         name: boardgame
         ports:
